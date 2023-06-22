@@ -8,6 +8,7 @@ export default function Sidebar() {
     <section className="sidebar">
       <ShoppingCart />
       <CheckoutForm />
+      <button className="btn">&larr;</button>
       <p>Sidebar</p>
     </section>
   );

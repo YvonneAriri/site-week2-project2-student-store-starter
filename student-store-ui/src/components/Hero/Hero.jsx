@@ -5,7 +5,7 @@ import hero from "./Hero.svg";
 export default function Hero() {
   return (
     <div className="Hero">
-      <div className="welcome">
+      <div className="banner">
         <h1 className="Intro">Welcome!</h1>
 
         <h1 className="merch">Find Your Merch!</h1>
