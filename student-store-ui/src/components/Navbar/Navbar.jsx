@@ -1,6 +1,7 @@
 import * as React from "react";
 import "./Navbar.css";
-import logo from "./logo.png";
+import Logo from "../Logo/Logo";
+
 import twitterIcon from "./twitter.svg";
 import instagramIcon from "./instagram.svg";
 import facebookIcon from "./facebook.svg";
@@ -8,10 +9,7 @@ import facebookIcon from "./facebook.svg";
 export default function Navbar() {
   return (
     <nav className="navbar">
-      <div className="codelogo">
-        <img className="logo" src={logo} />
-      </div>
-
+      <Logo />
       <img className="twittericon" src={twitterIcon} />
       <img className="instagramicon" src={instagramIcon} />
       <img className="facebookicon" src={facebookIcon} />

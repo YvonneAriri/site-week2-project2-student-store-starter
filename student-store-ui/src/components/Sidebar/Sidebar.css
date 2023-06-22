@@ -11,3 +11,55 @@
 
   border-right: solid white;
 }
+.arrowbtn {
+  border: none;
+  color: white;
+  background: transparent;
+  width: 70px;
+  height: 40px;
+  cursor: pointer;
+  font-size: 36px;
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  margin-bottom: 60px;
+  font-size: 100px;
+}
+.cartbtn {
+  border: none;
+  color: white;
+  background: transparent;
+  width: 70px;
+  height: 40px;
+  cursor: pointer;
+  font-size: 36px;
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  margin-bottom: 20px;
+}
+.monetiztionbtn {
+  border: none;
+  color: white;
+  background: transparent;
+  width: 70px;
+  height: 40px;
+  cursor: pointer;
+  font-size: 36px;
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  margin-bottom: 20px;
+}
+.factbtn {
+  border: none;
+  color: white;
+  background: transparent;
+  width: 130px;
+  height: 40px;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  margin-bottom: 20px;
+}

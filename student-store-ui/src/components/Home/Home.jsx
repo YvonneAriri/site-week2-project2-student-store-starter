@@ -8,9 +8,12 @@ export default function Home(props) {
     <div className="home">
       <Hero />
       {/* <ProductGrid /> */}
-      <div className="backgroundColor"></div>
-      <div>
-        <input type="text" class="search" placeholder="enter text" />
+
+      <div className="container">
+        <input type="text" class="search" placeholder="Search" />
+        <button className="search-icon">
+          <i class="material-icons">search</i>
+        </button>
       </div>
     </div>
   );

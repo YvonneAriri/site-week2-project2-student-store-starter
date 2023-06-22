@@ -4,23 +4,13 @@
   flex-direction: row;
   height: 70px;
 }
-.logo {
-  width: 74px; /* Set the desired width for the icon */
-  height: 70px; /* Set the desired height for the icon */
-  display: inline-block; /* Ensures the image occupies only the necessary space */
 
-  background: transparent;
-  margin-left: 300px;
-}
 .twittericon {
   width: 15px;
   height: 25px;
   margin: 20px 10px 20px 80px;
 }
-.codelogo {
-  display: flex;
-  flex-direction: column;
-}
+
 .facebookicon {
   width: 15px;
   height: 25px;

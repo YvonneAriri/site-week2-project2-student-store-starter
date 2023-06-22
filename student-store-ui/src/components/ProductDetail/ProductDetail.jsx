@@ -3,5 +3,5 @@ import "./ProductDetail.css";
 import ProductView from "../ProductView/ProductView";
 import NotFound from "../NotFound/NotFound";
 export default function ProductDetail() {
-
+  return <ProductView />;
 }

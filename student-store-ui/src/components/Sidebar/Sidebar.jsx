@@ -8,8 +8,18 @@ export default function Sidebar() {
     <section className="sidebar">
       <ShoppingCart />
       <CheckoutForm />
-      <button className="btn">&larr;</button>
-      <p>Sidebar</p>
+      <button className="arrowbtn">
+        <i class="material-icons md-48">arrow_forward</i>
+      </button>
+      <button className="cartbtn">
+        <i class="material-icons md-48">add_shopping_cart</i>
+      </button>
+      <button className="monetiztionbtn">
+        <i class="material-icons md-48">monetization_on</i>
+      </button>
+      <button className="factbtn">
+        <i class="material-icons md-48">fact_check</i>
+      </button>
     </section>
   );
 }
