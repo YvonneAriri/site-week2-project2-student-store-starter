@@ -1,0 +1,36 @@
+.Hero {
+  display: flex;
+  flex-direction: rows;
+  align-items: center;
+  justify-content: center;
+  background-color: #00c385;
+  margin-left: 400px;
+  margin-right: 400px;
+  text-align: left;
+  padding: 30px;
+  color: white;
+}
+.details {
+  font-size: 20px;
+  margin-top: 0;
+  width: 600px;
+}
+.hero-img {
+  width: 120px;
+  height: 120px;
+  vertical-align: middle;
+}
+.Intro {
+  font-size: 60px;
+  margin-bottom: 8px;
+}
+.welcome {
+  display: flex;
+  flex-direction: column;
+  margin-right: 150px;
+}
+.merch {
+  margin-top: 0;
+  font-size: 60px;
+  margin-bottom: 20px;
+}

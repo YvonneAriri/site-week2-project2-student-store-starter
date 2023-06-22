@@ -8,22 +8,6 @@ import Footer from "../Footer/Footer";
 import "./App.css";
 
 export default function App() {
-  // const [products, setProducts] = useState([]);
-  // const [isFetching, setIsFetching] = useState(true);
-  // useEffect(() => {
-  //   // Fetch products from the API
-  //   api
-  //     .getProducts()
-  //     .then((response) => {
-  //       setProducts(response.data);
-  //       setIsFetching(false);
-  //     })
-  //     .catch((error) => {
-  //       console.log(error);
-  //       setIsFetching(false);
-  //     });
-  // }, []);
-
   return (
     <div className="app">
       <BrowserRouter>
