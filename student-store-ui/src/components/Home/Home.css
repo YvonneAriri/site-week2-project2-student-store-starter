@@ -5,4 +5,15 @@
   min-height: 100vh;
   display: flex;
   flex-direction: column;
+  text-align: center;
+  background-color: lightgreen;
+}
+.search {
+  margin: 20px;
+}
+.backgroundColor {
+  background-color: lightgreen;
+}
+.home.backgroundColor {
+  background-color: lightgreen;
 }

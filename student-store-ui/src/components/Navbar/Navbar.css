@@ -1,0 +1,14 @@
+.navbar {
+  text-align: center;
+  background-color: aliceblue;
+}
+.logo {
+  width: 74px; /* Set the desired width for the icon */
+  height: 74px; /* Set the desired height for the icon */
+  display: inline-block; /* Ensures the image occupies only the necessary space */
+  vertical-align: middle;
+  align-items: center;
+  justify-content: center;
+  background: transparent;
+}
+
