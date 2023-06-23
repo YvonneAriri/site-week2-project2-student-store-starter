@@ -11,6 +11,10 @@
 
   border-right: solid white;
 }
+.additional {
+  height: 100%; /* Full-height: remove this if you want "auto" height */
+  width: 200px;
+}
 .arrowbtn {
   border: none;
   color: white;
