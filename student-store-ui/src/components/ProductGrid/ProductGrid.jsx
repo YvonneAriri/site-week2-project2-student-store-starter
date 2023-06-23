@@ -84,10 +84,7 @@ export default function ProductGrid(props) {
 
       <div className="product-grid">
         {filteredProducts.map((product) => (
-          <div key={product.id}>
-            <img className="Image" src={product.image} alt={product.name} />
-            <p>{product.name}</p>
-          </div>
+          <ProductCard key={product.id} product={product} />
         ))}
       </div>
     </>

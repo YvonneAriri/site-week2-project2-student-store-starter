@@ -15,11 +15,7 @@
 
   margin: 30px 260px 30px 260px;
 }
-.Image {
-  object-fit: cover;
-  width: 250px;
-  height: 300px;
-}
+
 .category-btn {
   height: 40px;
   background-color: white;
