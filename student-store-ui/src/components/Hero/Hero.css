@@ -1,13 +1,15 @@
 .Hero {
   display: flex;
-  flex-direction: rows;
+  flex-direction: row;
   align-items: center;
   justify-content: center;
   background-color: #00c385;
-  margin-left: 300px;
-  margin-right: 300px;
+  margin: 0 auto;
+  width: 70%;
+
+  height: 350px;
   text-align: left;
-  padding: 30px;
+  padding: 40px;
   color: white;
 }
 .banner {
@@ -15,22 +17,19 @@
 }
 .details {
   font-size: 20px;
-  margin-top: 0;
+  margin: 0;
   width: 600px;
 }
 .hero-img {
   width: 120px;
   height: 120px;
+  margin: 0px 105px 0px 50px;
   vertical-align: middle;
 }
 .Intro {
   font-size: 60px;
+  margin-top: 0;
   margin-bottom: 8px;
-}
-.welcome {
-  display: flex;
-  flex-direction: column;
-  margin-right: 150px;
 }
 .merch {
   margin-top: 0;
