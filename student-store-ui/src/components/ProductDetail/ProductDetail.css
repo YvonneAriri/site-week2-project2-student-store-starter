@@ -1,0 +1,17 @@
+.product-detail {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%; /* Set the image width to fill the container */
+  height: 100%; /* Set the image height to fill the container */
+  object-fit: cover;
+  flex-wrap: wrap;
+  margin-top: none;
+
+  max-width: 100%;
+}
+.Image {
+  width: 200px; /* Set the desired width for the icon */
+  height: 300px;
+  object-fit: cover;
+}

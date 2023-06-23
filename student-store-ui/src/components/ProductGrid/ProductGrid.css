@@ -1,0 +1,15 @@
+.product-grid {
+  display: flex;
+  flex: 1;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin-right: 300px;
+  margin-top: 0;
+  margin-left: 300px;
+}
+
+.Image {
+  object-fit: cover;
+  width: 250px;
+  height: 300px;
+}

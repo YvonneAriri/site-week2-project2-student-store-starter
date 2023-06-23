@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from "react";
-// import axios from "axios";
+import axios from "axios";
 import { BrowserRouter } from "react-router-dom";
 import Navbar from "../Navbar/Navbar";
 import Sidebar from "../Sidebar/Sidebar";
 import Home from "../Home/Home";
-import ProductDetail from "../ProductDetail/ProductDetail";
+import ProductGrid from "../ProductGrid/ProductGrid";
 import Footer from "../Footer/Footer";
 import "./App.css";
 
@@ -14,12 +14,11 @@ export default function App() {
   useEffect(() => {
     const fetchProducts = async () => {
       try {
-        const response = await fetch(
+        const response = await axios.get(
           "https://codepath-store-api.herokuapp.com/store"
         );
-        const data = await response.json();
+        const data = response.data;
         setProducts(data.products);
-        console.log(data);
       } catch (error) {
         console.error("Error fetching products:", error);
       }
@@ -35,14 +34,7 @@ export default function App() {
           <Navbar />
           <Sidebar />
           <Home />
-          <ProductDetail products={products} />
-          {products.map((product) => (
-            <div key={product.id}>
-              <img src={product.image} alt={product.name} />
-
-              <p>{product.name}</p>
-            </div>
-          ))}
+          <ProductGrid products={products} />
         </main>
       </BrowserRouter>
     </div>
