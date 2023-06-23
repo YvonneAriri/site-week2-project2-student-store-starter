@@ -3,13 +3,29 @@
   flex: 1;
   flex-wrap: wrap;
   justify-content: space-between;
-  margin-right: 300px;
+  margin-right: 260px;
   margin-top: 0;
-  margin-left: 300px;
+  margin-left: 260px;
 }
+.btn {
+  align-items: center;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
 
+  margin: 30px 260px 30px 260px;
+}
 .Image {
   object-fit: cover;
   width: 250px;
   height: 300px;
+}
+.category-btn {
+  height: 40px;
+  background-color: white;
+  font-size: 18px;
+  border: none;
+}
+.active-btn {
+  border-bottom: 2px solid #00c385;
 }
