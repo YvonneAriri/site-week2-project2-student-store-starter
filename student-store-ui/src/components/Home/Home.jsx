@@ -5,7 +5,12 @@ import Hero from "../Hero/Hero";
 import ProductGrid from "../ProductGrid/ProductGrid";
 
 export default function Home(props) {
-  const { products, handleAddItemToCart, handleRemoveItemFromCart } = props;
+  const {
+    products,
+    handleAddItemToCart,
+    handleRemoveItemFromCart,
+    hideProductGrid,
+  } = props;
 
   return (
     <>
@@ -26,11 +31,13 @@ export default function Home(props) {
           </div>
         </div>
       </div>
-      <ProductGrid
-        products={products}
-        handleAddItemToCart={handleAddItemToCart}
-        handleRemoveItemFromCart={handleRemoveItemFromCart}
-      />
+      {!hideProductGrid && (
+        <ProductGrid
+          products={products}
+          handleAddItemToCart={handleAddItemToCart}
+          handleRemoveItemFromCart={handleRemoveItemFromCart}
+        />
+      )}
     </>
   );
 }
