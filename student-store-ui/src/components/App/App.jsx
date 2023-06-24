@@ -8,6 +8,7 @@ import { Route, Routes } from "react-router-dom";
 import "./App.css";
 import ProductDetail from "../ProductDetail/ProductDetail";
 import NotFound from "../NotFound/NotFound";
+import Footer from "../Footer/Footer";
 
 export default function App() {
   const [products, setProducts] = useState([]);
@@ -77,6 +78,7 @@ export default function App() {
             <Route path="/products/:productId" element={<ProductDetail />} />
             <Route path="*" element={<NotFound />} />
           </Routes>
+          <Footer />
         </main>
       </BrowserRouter>
     </div>
