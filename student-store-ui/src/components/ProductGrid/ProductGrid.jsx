@@ -81,7 +81,7 @@ export default function ProductGrid(props) {
           </>
         ) : null}
       </div>
-
+      <p>about us</p>
       <div className="product-grid">
         {filteredProducts?.map((product) => (
           <ProductCard
