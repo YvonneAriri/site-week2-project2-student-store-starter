@@ -1,4 +1,4 @@
-import * as React from "react";
+import { useState, useEffect } from "react";
 import "./Home.css";
 import Hero from "../Hero/Hero";
 
@@ -12,12 +12,46 @@ export default function Home(props) {
     hideProductGrid,
   } = props;
 
+  const [searchQuery, setSearchQuery] = useState();
+  const [productsSearchMatch, setProductsSearchMatch] = useState(products);
+
+  const searchProduct = (value) => {
+    if (value) {
+      setProductsSearchMatch(
+        products.filter((product) =>
+          product.name.toLowerCase().includes(value.toLowerCase())
+        )
+      );
+    } else {
+      setProductsSearchMatch(products);
+    }
+  };
+
+  useEffect(() => {
+    if (!hideProductGrid) {
+      searchProduct(searchQuery);
+    }
+  }, [searchQuery]);
+
+  useEffect(() => {
+    setProductsSearchMatch(products);
+  }, [products]);
+
+  const handleChange = (event) => {
+    setSearchQuery(event.target.value);
+  };
+
   return (
     <>
       <div className="home">
         <Hero />
         <div className="container">
-          <input type="text" className="search" placeholder="Search" />
+          <input
+            type="text"
+            className="search"
+            placeholder="Search"
+            onChange={handleChange}
+          />
           <i className="material-icons search-icon">search</i>
 
           <div className="help">
@@ -33,7 +67,7 @@ export default function Home(props) {
       </div>
       {!hideProductGrid && (
         <ProductGrid
-          products={products}
+          products={productsSearchMatch}
           handleAddItemToCart={handleAddItemToCart}
           handleRemoveItemFromCart={handleRemoveItemFromCart}
         />

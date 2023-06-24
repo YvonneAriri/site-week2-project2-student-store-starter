@@ -2,7 +2,7 @@ import * as React from "react";
 import "./Hero.css";
 import hero from "./Hero.svg";
 
-export default function Hero(props) {
+export default function Hero() {
   return (
     <div className="Hero">
       <div className="banner">
