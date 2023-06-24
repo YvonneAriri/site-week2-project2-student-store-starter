@@ -1,6 +1,5 @@
 .sidebar {
   height: 100%; /* Full-height: remove this if you want "auto" height */
-  width: 74px; /* Set the width of the sidebar */
   position: fixed; /* Fixed Sidebar (stay in place on scroll) */
   z-index: 100; /* Stay on top */
   top: 0; /* Stay at the top */
@@ -11,11 +10,14 @@
 
   border-right: solid white;
 }
-.additional {
-  height: 100%; /* Full-height: remove this if you want "auto" height */
-  width: 200px;
+.sidebar > .section-close {
+  width: 75px;
 }
-.arrowbtn {
+.sidebar > .section-open {
+  width: 550px;
+}
+
+.toggle-button {
   border: none;
   color: white;
   background: transparent;
@@ -28,42 +30,4 @@
   padding: 20px;
   margin-bottom: 60px;
   font-size: 100px;
-}
-.cartbtn {
-  border: none;
-  color: white;
-  background: transparent;
-  width: 70px;
-  height: 40px;
-  cursor: pointer;
-  font-size: 36px;
-  display: flex;
-  flex-direction: column;
-  padding: 20px;
-  margin-bottom: 20px;
-}
-.monetiztionbtn {
-  border: none;
-  color: white;
-  background: transparent;
-  width: 70px;
-  height: 40px;
-  cursor: pointer;
-  font-size: 36px;
-  display: flex;
-  flex-direction: column;
-  padding: 20px;
-  margin-bottom: 20px;
-}
-.factbtn {
-  border: none;
-  color: white;
-  background: transparent;
-  width: 130px;
-  height: 40px;
-  cursor: pointer;
-  display: flex;
-  flex-direction: column;
-  padding: 20px;
-  margin-bottom: 20px;
 }
