@@ -31,3 +31,23 @@
   margin-bottom: 60px;
   font-size: 100px;
 }
+.information {
+  color: white;
+  margin-left: 10px;
+  width: 500px;
+}
+.color {
+  color: green;
+}
+.header {
+  color: white;
+  text-align: center;
+}
+.middle-header {
+  color: white;
+  text-align: center;
+}
+.bottom-header {
+  color: white;
+  text-align: center;
+}

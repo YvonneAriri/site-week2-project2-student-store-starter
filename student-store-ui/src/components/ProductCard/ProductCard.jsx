@@ -1,6 +1,6 @@
-import * as React from "react";
 import "./ProductCard.css";
 import { Link } from "react-router-dom";
+import React, { useState } from "react";
 
 export default function ProductCard(props) {
   const {
@@ -11,7 +11,14 @@ export default function ProductCard(props) {
     handleRemoveItemFromCart,
     showDescription,
   } = props;
+  const [counter, setCounter] = useState(0);
+  const incrementHandler = () => {
+    setCounter(counter + 1);
+  };
 
+  const decrementHandler = () => {
+    setCounter(counter - 1);
+  };
   return (
     <div className="product-card" key={productId}>
       <div className="media">
@@ -20,16 +27,27 @@ export default function ProductCard(props) {
         </Link>
       </div>
       <div className="details-section">
-        <div className="name">
+        <div className="product-name">
           <p>{product.name}</p>
           <p>${product.price}</p>
         </div>
 
         <div className="buttons">
-          <button onClick={() => handleAddItemToCart(productId)}>
+          <button
+            onClick={() => {
+              incrementHandler();
+              handleAddItemToCart(productId);
+            }}
+          >
             <i className="material-icons">add</i>
           </button>
-          <button onClick={() => handleRemoveItemFromCart(productId)}>
+          {counter > 0 && <p>{counter}</p>}
+          <button
+            onClick={() => {
+              decrementHandler();
+              handleRemoveItemFromCart(productId);
+            }}
+          >
             <i className="material-icons">remove</i>
           </button>
         </div>

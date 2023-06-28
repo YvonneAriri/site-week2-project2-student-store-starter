@@ -10,7 +10,7 @@ export default function Home(props) {
     handleAddItemToCart,
     handleRemoveItemFromCart,
     hideProductGrid,
-  } = props;
+  } = props; ///Destructuring
 
   const [searchQuery, setSearchQuery] = useState();
   const [productsSearchMatch, setProductsSearchMatch] = useState(products);
@@ -65,6 +65,7 @@ export default function Home(props) {
           </div>
         </div>
       </div>
+
       {!hideProductGrid && (
         <ProductGrid
           products={productsSearchMatch}

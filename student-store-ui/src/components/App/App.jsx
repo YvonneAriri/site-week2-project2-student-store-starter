@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useReducer } from "react";
 import axios from "axios";
 import { BrowserRouter } from "react-router-dom";
 import Navbar from "../Navbar/Navbar";
@@ -9,6 +9,7 @@ import "./App.css";
 import ProductDetail from "../ProductDetail/ProductDetail";
 import NotFound from "../NotFound/NotFound";
 import Footer from "../Footer/Footer";
+import ProductCard from "../ProductCard/ProductCard";
 
 export default function App() {
   const [products, setProducts] = useState([]);
@@ -23,19 +24,21 @@ export default function App() {
   };
 
   const handleAddItemToCart = (productId) => {
-    const isProductInCart = false;
+    let isProductInCart = false;
     const newShoppingCart = shoppingCart.map((item) => {
-      if (item.itemId === productId) {
+      if (item && item.itemId === productId) {
         isProductInCart = true;
         item.quantity += 1;
       }
+      return item;
     });
 
     if (isProductInCart) {
       setShoppingCart(newShoppingCart);
     } else {
-      setShoppingCart([...newShoppingCart, { itemId: productId, quantity: 1 }]);
+      setShoppingCart([...shoppingCart, { itemId: productId, quantity: 1 }]);
     }
+    console.log("!!!", shoppingCart);
   };
 
   const handleRemoveItemFromCart = (productId) => {
@@ -72,12 +75,31 @@ export default function App() {
       <BrowserRouter>
         <main>
           <Navbar />
+
           <Sidebar isOpen={isOpen} handleOnToggle={handleOnToggle} />
           <Routes>
-            <Route path="/" element={<Home products={products} />} />
-            <Route path="/products/:productId" element={<ProductDetail />} />
+            <Route
+              path="/"
+              element={
+                <Home
+                  products={products}
+                  handleAddItemToCart={handleAddItemToCart}
+                  handleRemoveItemFromCart={handleRemoveItemFromCart}
+                />
+              }
+            />
+            <Route
+              path="/products/:productId"
+              element={
+                <ProductDetail
+                  handleAddItemToCart={handleAddItemToCart}
+                  handleRemoveItemFromCart={handleRemoveItemFromCart}
+                />
+              }
+            />
             <Route path="*" element={<NotFound />} />
           </Routes>
+
           <Footer />
         </main>
       </BrowserRouter>

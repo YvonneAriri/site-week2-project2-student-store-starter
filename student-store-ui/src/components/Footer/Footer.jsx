@@ -38,16 +38,6 @@ export default function Footer() {
               </ul>
             </div>
             <div class="link-column">
-              <h4>Categories</h4>
-              <ul>
-                <li>All Categories</li>
-                <li>Clothing</li>
-                <li>Food</li>
-                <li>Accessories</li>
-                <li>Tech</li>
-              </ul>
-            </div>
-            <div class="link-column">
               <h4>Support</h4>
               <ul>
                 <li>Contact Us</li>
