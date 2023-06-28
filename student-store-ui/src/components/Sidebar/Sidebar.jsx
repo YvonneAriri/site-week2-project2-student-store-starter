@@ -52,6 +52,7 @@ export default function Sidebar(props) {
               Shopping Cart{" "}
               <i class="material-icons md-48">add_shopping_cart</i>
             </h2>
+
             <p>No items added to cart yet. Start shopping now!</p>
             <h2 className="middle-header">
               Payment Info <i class="material-icons md-48">monetization_on</i>
@@ -64,7 +65,7 @@ export default function Sidebar(props) {
               <input type="checkbox" />I agree to the{" "}
               <span className="color">terms and conditions</span>
             </p>
-            <button>Checkout</button>
+            <button onClick="">Checkout</button>
             <h2 className="bottom-header">
               Checkout Info<i class="material-icons md-48">fact_check</i>
             </h2>
@@ -75,7 +76,11 @@ export default function Sidebar(props) {
             </p>
           </div>
 
-          <ShoppingCart />
+          <ShoppingCart
+            products={products}
+            shoppingCart={shoppingCart}
+            isOpen={isOpen}
+          />
           <CheckoutForm />
         </div>
       )}

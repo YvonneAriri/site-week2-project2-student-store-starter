@@ -13,7 +13,7 @@ export default function ProductCard(props) {
   } = props;
   const [counter, setCounter] = useState(0);
   const incrementHandler = () => {
-    if (counter) setCounter((val) => val + 1);
+    setCounter(counter + 1);
   };
 
   const decrementHandler = () => {
@@ -41,7 +41,12 @@ export default function ProductCard(props) {
           >
             <i className="material-icons">add</i>
           </button>
-          {counter > 0 && <p>{counter}</p>}
+          {counter > 0 && (
+            <div>
+              <p className="counter">{counter}</p>
+            </div>
+          )}
+
           <button
             onClick={() => {
               decrementHandler();

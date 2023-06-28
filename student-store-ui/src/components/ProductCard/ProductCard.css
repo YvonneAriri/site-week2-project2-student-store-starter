@@ -51,3 +51,11 @@
   align-items: start;
   justify-content: space-between;
 }
+.counter {
+  background-color: orange;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 5px;
+}

@@ -46,8 +46,9 @@ export default function App() {
       if (item.itemId === productId) {
         item.quantity -= 1;
       }
+      return item;
     });
-
+    console.log("!!", shoppingCart);
     setShoppingCart(newShoppingCart.filter((item) => item.quantity !== 0));
   };
 
@@ -76,7 +77,12 @@ export default function App() {
         <main>
           <Navbar />
 
-          <Sidebar isOpen={isOpen} handleOnToggle={handleOnToggle} />
+          <Sidebar
+            isOpen={isOpen}
+            handleOnToggle={handleOnToggle}
+            shoppingCart={shoppingCart}
+            products={products}
+          />
           <Routes>
             <Route
               path="/"
