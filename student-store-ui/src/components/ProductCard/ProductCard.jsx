@@ -13,7 +13,7 @@ export default function ProductCard(props) {
   } = props;
   const [counter, setCounter] = useState(0);
   const incrementHandler = () => {
-    setCounter(counter + 1);
+    if (counter) setCounter((val) => val + 1);
   };
 
   const decrementHandler = () => {
