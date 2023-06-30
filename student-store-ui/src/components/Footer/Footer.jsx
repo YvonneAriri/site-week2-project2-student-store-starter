@@ -1,6 +1,10 @@
 import * as React from "react";
 import "./Footer.css";
 import Logos from "./logos.png";
+import happy from "./happy.svg";
+import twitter from "./twitter.svg";
+import instagram from "./instagram.svg";
+import facebook from "./facebook.svg";
 
 export default function Footer() {
   return (
@@ -23,11 +27,27 @@ export default function Footer() {
           <img className="logosize" src={Logos} />
         </div>
       </div>
+
+      <div className="contacting">
+        <div className="socials">
+          <h2> Contact Us</h2>
+          <p>Email: code@path.org</p> <p>Phone: 1-800-CODEPATH</p>{" "}
+          <p>Address: 123 Fake Street, San Francisco, CA </p>
+          <p>
+            Socials:
+            <img className="twittericon" src={twitter} />
+            <img className="instagramicon" src={instagram} />
+            <img className="facebookicon" src={facebook} />
+          </p>
+        </div>
+        <div className="happy">
+          <img src={happy}></img>
+        </div>
+      </div>
       <div>
         <div id="contact-us">
-          <h2 className="contactus"> Contact Us</h2>
           <div className="contact">
-            <div class="link-column">
+            <div className="link-column">
               <h4>Categories</h4>
               <ul>
                 <li>All Categories</li>
@@ -37,7 +57,7 @@ export default function Footer() {
                 <li>Tech</li>
               </ul>
             </div>
-            <div class="link-column">
+            <div className="link-column">
               <h4>Support</h4>
               <ul>
                 <li>Contact Us</li>
@@ -47,7 +67,7 @@ export default function Footer() {
                 <li>Open Dispute</li>
               </ul>
             </div>
-            <div class="link-column">
+            <div className="link-column">
               <h4>Account</h4>
               <ul>
                 <li>Login</li>
@@ -56,7 +76,7 @@ export default function Footer() {
                 <li>My Orders</li>
               </ul>
             </div>
-            <div class="link-column">
+            <div className="link-column">
               <h4>Socials</h4>
               <ul>
                 <li>Facebook</li>

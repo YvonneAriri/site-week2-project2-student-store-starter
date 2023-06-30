@@ -3,6 +3,7 @@
   justify-content: left;
   flex-direction: column;
   margin: 0;
+  color: white;
 }
 .logos {
   display: flex;
@@ -18,7 +19,7 @@
   flex-direction: row;
   align-items: center;
 
-  background-color: #00c385;
+  background-color: #2c4047;
   margin: 0 auto;
   width: 70%;
   border-style: solid;
@@ -26,6 +27,7 @@
   height: 350px;
   text-align: left;
   padding: 40px;
+  color: white;
 }
 .logosize {
   width: 300px;
@@ -39,7 +41,7 @@
   justify-content: left;
   display: flex;
   flex-direction: column;
-  color: black;
+  color: white;
 }
 .title {
   display: flex;
@@ -54,6 +56,32 @@
   margin-right: 300px;
 }
 .contactus {
+  margin-top: 20px;
   align-items: center;
   text-align: center;
+}
+.contacting {
+  margin-top: 20px;
+  align-items: center;
+  text-align: left;
+  margin-left: 260px;
+  background-color: #2c4047;
+  margin-right: 260px;
+  color: white;
+  padding-left: 30px;
+  justify-content: space-between;
+  display: flex;
+  flex-direction: row;
+}
+.socials {
+  justify-content: left;
+  display: flex;
+  flex-direction: column;
+  color: white;
+}
+.happy {
+  justify-content: right;
+  display: flex;
+  flex-direction: column;
+  color: white;
 }
