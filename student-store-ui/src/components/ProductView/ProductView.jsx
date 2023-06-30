@@ -16,6 +16,7 @@ export default function ProductView(props) {
     <div className="product-view">
       <h1 className="product-id">Product #{productId}</h1>
       <ProductCard
+        quantity={quantity}
         productId={product.id}
         handleAddItemToCart={handleAddItemToCart}
         handleRemoveItemFromCart={handleRemoveItemFromCart}

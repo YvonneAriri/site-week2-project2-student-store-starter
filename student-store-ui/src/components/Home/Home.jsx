@@ -10,6 +10,8 @@ export default function Home(props) {
     handleAddItemToCart,
     handleRemoveItemFromCart,
     hideProductGrid,
+    shoppingCart,
+    isFetching,
   } = props; ///Destructuring
 
   const [searchQuery, setSearchQuery] = useState();
@@ -61,16 +63,18 @@ export default function Home(props) {
             <p>Help</p>
           </div>
           <div className="cart">
-            My Cart <i class="material-icons">shopping_cart</i>
+            My Cart <i className="material-icons">shopping_cart</i>
           </div>
         </div>
       </div>
 
       {!hideProductGrid && (
         <ProductGrid
+          shoppingCart={shoppingCart}
           products={productsSearchMatch}
           handleAddItemToCart={handleAddItemToCart}
           handleRemoveItemFromCart={handleRemoveItemFromCart}
+          isFetching={isFetching}
         />
       )}
     </>
