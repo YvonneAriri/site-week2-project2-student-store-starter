@@ -13,8 +13,38 @@ export default function CheckoutForm(props) {
   const [showReceipt, setShowReceipt] = useState(false);
   const [form, setForm] = useState({ name: "", email: "" });
   const [shoppedItems, setShoppedItems] = useState([]);
+  const [errors, setErrors] = useState({ name: "", email: "" });
+
   let total = 0;
   let subTotal = 0;
+
+  const validateForm = () => {
+    let hasErrors = false;
+    const newErrors = { name: "", email: "" };
+
+    if (form.name.trim() === "") {
+      newErrors.name = "Name cannot be empty";
+      hasErrors = true;
+    }
+
+    if (form.email.trim() === "") {
+      newErrors.email = "Email cannot be empty";
+      hasErrors = true;
+    }
+
+    setErrors(newErrors);
+
+    return !hasErrors;
+  };
+  const handleSubmit = (e) => {
+    e.preventDefault();
+
+    if (validateForm()) {
+      setShowReceipt(true);
+      setShoppedItems([...shoppingCart]);
+      handleOnSubmitCheckoutForm();
+    }
+  };
 
   return (
     <div>
@@ -26,11 +56,14 @@ export default function CheckoutForm(props) {
           className="checkout-form-input"
           placeholder="Students Name"
           name="name"
-          value={checkoutForm.name}
-          onChange={(event) =>
-            handleOnCheckoutFormChange("name", event.target.value)
-          }
+          value={form.name}
+          onChange={(event) => {
+            setForm({ ...form, name: event.target.value });
+            handleOnCheckoutFormChange("email", event.target.value);
+            setErrors({ ...errors, name: "" });
+          }}
         />
+        {errors.name && <p style={{ color: "red" }}>{errors.name}</p>}
         <p>Email</p>
         <input
           type="email"
@@ -38,25 +71,19 @@ export default function CheckoutForm(props) {
           className="checkout-form-input"
           placeholder="student@codepath.org"
           name="email"
-          value={checkoutForm.email}
-          onChange={(event) =>
-            handleOnCheckoutFormChange("email", event.target.value)
-          }
+          value={form.email}
+          onChange={(event) => {
+            setForm({ ...form, email: event.target.value });
+            handleOnCheckoutFormChange("email", event.target.value);
+            setErrors({ ...errors, email: "" });
+          }}
         />
+        {errors.email && <p style={{ color: "red" }}>{errors.email}</p>}
         <p>
           <input type="checkbox" />I agree to the{" "}
           <span className="color">terms and conditions</span>
         </p>
-        <button
-          onClick={() => {
-            setShoppedItems(shoppingCart);
-            setForm(checkoutForm);
-            handleOnSubmitCheckoutForm();
-            setShowReceipt(true);
-          }}
-        >
-          Checkout
-        </button>
+        <button onClick={handleSubmit}>Checkout</button>
         <h2 className="bottom-header">
           Checkout Info<i className="material-icons md-48">fact_check</i>
         </h2>
@@ -91,8 +118,7 @@ export default function CheckoutForm(props) {
                         <li>Before taxes, the subtotal was ${result}.</li>
                         <li>
                           After taxes and fees were applied, the total comes out
-                          to
-                          {totalCost}
+                          to ${totalCost}
                         </li>
                       </>
                     ) : null}
