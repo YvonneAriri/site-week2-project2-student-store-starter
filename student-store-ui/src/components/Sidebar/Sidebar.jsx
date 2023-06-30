@@ -23,17 +23,17 @@ export default function Sidebar(props) {
               arrow_forward
             </i>
           </button>
-          <button className="cartbtn">
+          <button className="toggle-button" onClick={handleOnToggle}>
             <i style={{ color: "white" }} className="material-icons md-48">
               add_shopping_cart
             </i>
           </button>
-          <button className="monetizationbtn">
+          <button className="toggle-button" onClick={handleOnToggle}>
             <i style={{ color: "white" }} className="material-icons md-48">
               monetization_on
             </i>
           </button>
-          <button className="factbtn">
+          <button className="toggle-button" onClick={handleOnToggle}>
             <i style={{ color: "white" }} className="material-icons md-48">
               fact_check
             </i>
