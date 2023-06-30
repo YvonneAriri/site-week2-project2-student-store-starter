@@ -40,6 +40,7 @@ export default function Sidebar(props) {
           </button>
         </div>
       )}
+
       {isOpen && (
         <div className="section-open">
           <button className="toggle-button" onClick={handleOnToggle}>
@@ -53,7 +54,15 @@ export default function Sidebar(props) {
               <i class="material-icons md-48">add_shopping_cart</i>
             </h2>
 
-            <p>No items added to cart yet. Start shopping now!</p>
+            {shoppingCart.length == 0 ? (
+              <p>No items added to cart yet. Start shopping now!</p>
+            ) : (
+              <ShoppingCart
+                products={products}
+                shoppingCart={shoppingCart}
+                isOpen={isOpen}
+              />
+            )}
             <h2 className="middle-header">
               Payment Info <i class="material-icons md-48">monetization_on</i>
             </h2>
@@ -75,12 +84,6 @@ export default function Sidebar(props) {
               delivered to your dorm room.
             </p>
           </div>
-
-          <ShoppingCart
-            products={products}
-            shoppingCart={shoppingCart}
-            isOpen={isOpen}
-          />
           <CheckoutForm />
         </div>
       )}
