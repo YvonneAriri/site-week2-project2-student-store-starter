@@ -11,16 +11,12 @@ export default function ProductCard(props) {
     handleRemoveItemFromCart,
     showDescription,
   } = props;
-  const [counter, setCounter] = useState(0);
-  const incrementHandler = () => {
-    setCounter(counter + 1);
-  };
 
-  const decrementHandler = () => {
-    setCounter(counter - 1);
-  };
   return (
-    <div className="product-card" key={productId}>
+    <div
+      className={`product-card ${showDescription ? "description" : ""}`} // add styling when showDescription is true
+      key={productId}
+    >
       <div className="media">
         <Link to={`/products/${productId}`}>
           <img className="image" src={product.image} alt={product.name} />
@@ -35,21 +31,19 @@ export default function ProductCard(props) {
         <div className="buttons">
           <button
             onClick={() => {
-              incrementHandler();
               handleAddItemToCart(productId);
             }}
           >
             <i className="material-icons">add</i>
           </button>
-          {counter > 0 && (
+          {quantity > 0 && (
             <div>
-              <p className="counter">{counter}</p>
+              <p className="counter">{quantity}</p>
             </div>
           )}
 
           <button
             onClick={() => {
-              decrementHandler();
               handleRemoveItemFromCart(productId);
             }}
           >
@@ -57,6 +51,7 @@ export default function ProductCard(props) {
           </button>
         </div>
       </div>
+      {showDescription && product.description}
     </div>
   );
 }
