@@ -3,7 +3,13 @@ import "./ProductGrid.css";
 import ProductCard from "../ProductCard/ProductCard";
 
 export default function ProductGrid(props) {
-  const { products, handleAddItemToCart, handleRemoveItemFromCart } = props;
+  const {
+    products,
+    shoppingCart,
+    isFetching,
+    handleAddItemToCart,
+    handleRemoveItemFromCart,
+  } = props;
 
   const [filteredProducts, setFilteredProducts] = useState(products);
   const [activeCategory, setActiveCategory] = useState("");
@@ -83,16 +89,28 @@ export default function ProductGrid(props) {
       </div>
       <p>about us</p>
       <div className="product-grid">
-        {filteredProducts?.map((product) => (
-          <ProductCard
-            key={product.id}
-            productId={product.id}
-            handleAddItemToCart={handleAddItemToCart}
-            handleRemoveItemFromCart={handleRemoveItemFromCart}
-            product={product}
-            showDescription={false}
-          />
-        ))}
+        {isFetching ? (
+          <h1 className="loading">Loading...</h1>
+        ) : (
+          filteredProducts?.map((product) => {
+            const productItem = shoppingCart.find(
+              (item) => item.itemId === product.id
+            );
+            const quantity = productItem?.quantity ?? 0;
+
+            return (
+              <ProductCard
+                key={product.id}
+                quantity={quantity}
+                productId={product.id}
+                handleAddItemToCart={handleAddItemToCart}
+                handleRemoveItemFromCart={handleRemoveItemFromCart}
+                product={product}
+                showDescription={false}
+              />
+            );
+          })
+        )}
       </div>
     </>
   );
