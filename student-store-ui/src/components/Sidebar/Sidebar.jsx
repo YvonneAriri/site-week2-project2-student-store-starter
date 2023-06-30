@@ -1,7 +1,7 @@
 import "./Sidebar.css";
 import ShoppingCart from "../ShoppingCart/ShoppingCart";
 import CheckoutForm from "../CheckoutForm/CheckoutForm";
-import React, { useState } from "react";
+import * as React from "react";
 
 export default function Sidebar(props) {
   const {
@@ -51,7 +51,7 @@ export default function Sidebar(props) {
           <div className="information">
             <h2 className="header">
               Shopping Cart{" "}
-              <i class="material-icons md-48">add_shopping_cart</i>
+              <i className="material-icons md-48">add_shopping_cart</i>
             </h2>
 
             {shoppingCart.length == 0 ? (
@@ -64,27 +64,17 @@ export default function Sidebar(props) {
               />
             )}
             <h2 className="middle-header">
-              Payment Info <i class="material-icons md-48">monetization_on</i>
+              Payment Info{" "}
+              <i className="material-icons md-48">monetization_on</i>
             </h2>
-            <p>Name</p>
-            <input type="text" placeholder="Students Name" />
-            <p>Email</p>
-            <input type="text" placeholder="student@codepath.org" />
-            <p>
-              <input type="checkbox" />I agree to the{" "}
-              <span className="color">terms and conditions</span>
-            </p>
-            <button onClick="">Checkout</button>
-            <h2 className="bottom-header">
-              Checkout Info<i class="material-icons md-48">fact_check</i>
-            </h2>
-            <p>
-              A confirmation email will be sent to you so that you can confirm
-              this order. Once you have confirmed the order, it will be
-              delivered to your dorm room.
-            </p>
           </div>
-          <CheckoutForm />
+          <CheckoutForm
+            products={products}
+            shoppingCart={shoppingCart}
+            handleOnCheckoutFormChange={handleOnCheckoutFormChange}
+            handleOnSubmitCheckoutForm={handleOnSubmitCheckoutForm}
+            checkoutForm={checkoutForm}
+          />
         </div>
       )}
     </section>
