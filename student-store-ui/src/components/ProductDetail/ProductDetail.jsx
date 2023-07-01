@@ -8,7 +8,7 @@ import ProductCard from "../ProductCard/ProductCard";
 import { useParams } from "react-router-dom";
 
 export default function ProductDetail(props) {
-  const { handleAddItemToCart, handleRemoveItemFromCart } = props;
+  const { shoppingCart, handleAddItemToCart, handleRemoveItemFromCart } = props;
 
   const [product, setProduct] = useState({});
   const [isFetching, setIsFetching] = useState(true);
@@ -33,18 +33,26 @@ export default function ProductDetail(props) {
     fetchProducts();
   }, []);
 
+  const productItem = shoppingCart.find(
+    (item) => item.itemId === Number(productId)
+  );
+  const quantity = productItem?.quantity ?? 0;
+
   return (
     <div className="product-detail">
       <Home hideProductGrid={true} />
       {isFetching ? (
         <h1 className="loading">Loading...</h1>
-      ) : (
+      ) : product ? (
         <ProductView
+          quantity={quantity}
           product={product}
           productId={product.id}
           handleAddItemToCart={handleAddItemToCart}
           handleRemoveItemFromCart={handleRemoveItemFromCart}
         />
+      ) : (
+        <NotFound />
       )}
     </div>
   );
