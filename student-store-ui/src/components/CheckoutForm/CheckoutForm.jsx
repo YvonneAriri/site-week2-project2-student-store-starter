@@ -11,6 +11,7 @@ export default function CheckoutForm(props) {
   } = props;
 
   const [showReceipt, setShowReceipt] = useState(false);
+  const [form, setForm] = useState({ name: "", email: "" });
   const [shoppedItems, setShoppedItems] = useState([]);
   const [errors, setErrors] = useState({ name: "", email: "" });
 
@@ -35,13 +36,15 @@ export default function CheckoutForm(props) {
 
     return !hasErrors;
   };
+
   const handleSubmit = (e) => {
     e.preventDefault();
 
     if (validateForm()) {
-      setShowReceipt(true);
       setShoppedItems([...shoppingCart]);
+      setForm(checkoutForm);
       handleOnSubmitCheckoutForm();
+      setShowReceipt(true);
     }
   };
 
@@ -91,8 +94,7 @@ export default function CheckoutForm(props) {
           <div className="receipt">
             <h3>Receipt</h3>
             <p>
-              Showing receipt for {checkoutForm.name} available at{" "}
-              {checkoutForm.email}:
+              Showing receipt for {form.name} available at {form.email}:
             </p>
             <ul className="purchase">
               {shoppedItems?.map((item, index) => {
@@ -126,8 +128,6 @@ export default function CheckoutForm(props) {
                 );
               })}
             </ul>{" "}
-            <button className="shop-more">ShopMore</button>
-            <button className="shop-more">Exit</button>
           </div>
         ) : (
           <p className="info">
