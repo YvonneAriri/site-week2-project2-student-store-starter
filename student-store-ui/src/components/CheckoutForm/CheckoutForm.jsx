@@ -11,7 +11,6 @@ export default function CheckoutForm(props) {
   } = props;
 
   const [showReceipt, setShowReceipt] = useState(false);
-  const [form, setForm] = useState({ name: "", email: "" });
   const [shoppedItems, setShoppedItems] = useState([]);
   const [errors, setErrors] = useState({ name: "", email: "" });
 
@@ -22,12 +21,12 @@ export default function CheckoutForm(props) {
     let hasErrors = false;
     const newErrors = { name: "", email: "" };
 
-    if (form.name.trim() === "") {
+    if (checkoutForm.name.trim() === "") {
       newErrors.name = "Name cannot be empty";
       hasErrors = true;
     }
 
-    if (form.email.trim() === "") {
+    if (checkoutForm.email.trim() === "") {
       newErrors.email = "Email cannot be empty";
       hasErrors = true;
     }
@@ -56,10 +55,9 @@ export default function CheckoutForm(props) {
           className="checkout-form-input"
           placeholder="Students Name"
           name="name"
-          value={form.name}
+          value={checkoutForm.name}
           onChange={(event) => {
-            setForm({ ...form, name: event.target.value });
-            handleOnCheckoutFormChange("email", event.target.value);
+            handleOnCheckoutFormChange("name", event.target.value);
             setErrors({ ...errors, name: "" });
           }}
         />
@@ -71,9 +69,8 @@ export default function CheckoutForm(props) {
           className="checkout-form-input"
           placeholder="student@codepath.org"
           name="email"
-          value={form.email}
+          value={checkoutForm.email}
           onChange={(event) => {
-            setForm({ ...form, email: event.target.value });
             handleOnCheckoutFormChange("email", event.target.value);
             setErrors({ ...errors, email: "" });
           }}
@@ -94,7 +91,8 @@ export default function CheckoutForm(props) {
           <div className="receipt">
             <h3>Receipt</h3>
             <p>
-              Showing receipt for {form.name} available at {form.email}:
+              Showing receipt for {checkoutForm.name} available at{" "}
+              {checkoutForm.email}:
             </p>
             <ul className="purchase">
               {shoppedItems?.map((item, index) => {
@@ -128,6 +126,8 @@ export default function CheckoutForm(props) {
                 );
               })}
             </ul>{" "}
+            <button className="shop-more">ShopMore</button>
+            <button className="shop-more">Exit</button>
           </div>
         ) : (
           <p className="info">
