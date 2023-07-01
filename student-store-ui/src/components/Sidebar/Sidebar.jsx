@@ -55,7 +55,9 @@ export default function Sidebar(props) {
             </h2>
 
             {shoppingCart.length == 0 ? (
-              <p>No items added to cart yet. Start shopping now!</p>
+              <p className="no-item">
+                No items added to cart yet. Start shopping now!
+              </p>
             ) : (
               <ShoppingCart
                 products={products}
