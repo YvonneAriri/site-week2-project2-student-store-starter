@@ -47,9 +47,9 @@ export default function CheckoutForm(props) {
   };
 
   return (
-    <div>
+    <div className="checkout-form">
       <div>
-        <p>Name</p>
+        <p className="name"> Name</p>
         <input
           type="text"
           id="text"
@@ -64,7 +64,7 @@ export default function CheckoutForm(props) {
           }}
         />
         {errors.name && <p style={{ color: "red" }}>{errors.name}</p>}
-        <p>Email</p>
+        <p className="email">Email</p>
         <input
           type="email"
           id="email"
@@ -79,11 +79,13 @@ export default function CheckoutForm(props) {
           }}
         />
         {errors.email && <p style={{ color: "red" }}>{errors.email}</p>}
-        <p>
+        <p className="terms">
           <input type="checkbox" />I agree to the{" "}
           <span className="color">terms and conditions</span>
         </p>
-        <button onClick={handleSubmit}>Checkout</button>
+        <button className="checkout-btn" onClick={handleSubmit}>
+          Checkout
+        </button>
         <h2 className="bottom-header">
           Checkout Info<i className="material-icons md-48">fact_check</i>
         </h2>
@@ -128,7 +130,7 @@ export default function CheckoutForm(props) {
             </ul>{" "}
           </div>
         ) : (
-          <p>
+          <p className="info">
             A confirmation email will be sent to you so that you can confirm
             this order. Once you have confirmed the order, it will be delivered
             to your dorm room.
