@@ -41,10 +41,9 @@ export default function App() {
         "https://codepath-store-api.herokuapp.com/store",
         payload
       );
-      console.log("!!!", response);
 
-      if (response.status === 200) {
-        setCheckoutForm({});
+      if (response.status === 201) {
+        setCheckoutForm({ name: "", email: "" });
         setShoppingCart([]);
       } else {
         setError("Error submitting checkout form.");
@@ -116,13 +115,14 @@ export default function App() {
             handleOnCheckoutFormChange={handleOnCheckoutFormChange}
             handleOnSubmitCheckoutForm={handleOnSubmitCheckoutForm}
           />
-
           <Routes>
             <Route
               path="/"
               element={
                 <Home
                   products={products}
+                  shoppingCart={shoppingCart}
+                  isFetching={isFetching}
                   handleAddItemToCart={handleAddItemToCart}
                   handleRemoveItemFromCart={handleRemoveItemFromCart}
                 />
@@ -132,6 +132,7 @@ export default function App() {
               path="/products/:productId"
               element={
                 <ProductDetail
+                  shoppingCart={shoppingCart}
                   handleAddItemToCart={handleAddItemToCart}
                   handleRemoveItemFromCart={handleRemoveItemFromCart}
                 />
@@ -139,7 +140,6 @@ export default function App() {
             />
             <Route path="*" element={<NotFound />} />
           </Routes>
-
           <Footer />
         </main>
       </BrowserRouter>
