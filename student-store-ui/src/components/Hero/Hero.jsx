@@ -7,7 +7,7 @@ export default function Hero() {
     <div className="Hero">
       <div className="banner">
         <h1 className="Intro">Welcome!</h1>
-
+        {/* if you make changes too it  */}
         <h1 className="merch">Find Your Merch!</h1>
         <p className="details">
           We have all kinds of goodies. Click on any of the items to start
